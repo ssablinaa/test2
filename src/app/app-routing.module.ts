@@ -5,10 +5,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { Page1Component } from './page1/page1.component';
 import { Page2Component } from './page2/page2.component';
 import { Page3Component } from './page3/page3.component';
+import { confirmGuard } from './core/guards/confirm.guard';
 
 const routes: Routes = [
   { path: 'page1/:id', component: Page1Component },
-  { path: 'page2', component: Page2Component },
+  { path: 'page2', component: Page2Component, canActivate: [confirmGuard] },
   { path: 'page3', component: Page3Component },
 ];
 
