@@ -6,10 +6,17 @@ import { Page1Component } from './page1/page1.component';
 import { Page2Component } from './page2/page2.component';
 import { Page3Component } from './page3/page3.component';
 import { confirmGuard } from './core/guards/confirm.guard';
+import { exitGuard } from './core/guards/exit.guard';
+import { DataService } from './core/services/data.service';
 
 const routes: Routes = [
   { path: 'page1/:id', component: Page1Component },
-  { path: 'page2', component: Page2Component, canActivate: [confirmGuard] },
+  {
+    path: 'page2',
+    component: Page2Component,
+    canActivate: [confirmGuard],
+    canDeactivate: [exitGuard],
+  },
   { path: 'page3', component: Page3Component },
 ];
 
