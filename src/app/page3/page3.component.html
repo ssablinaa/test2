@@ -1,1 +1,18 @@
+<div *ngIf="clothes">
+  <h1>{{ title }}</h1>
+  <ul>
+    <li *ngFor="let cloth of clothes">
+      <h2>{{ cloth.name }}</h2>
+      <p>{{ cloth.description }}</p>
+      <p>Category: {{ cloth.category }}</p>
+      <p>Price: {{ cloth.price }}</p>
+      <p>Color: {{ cloth.color }}</p>
+      <p>Sizes: {{ cloth.size.join(", ") }}</p>
+    </li>
+  </ul>
+</div>
 
+<div *ngIf="!clothes">
+  <h1>{{ title }}</h1>
+  <p>No clothes data available</p>
+</div>
