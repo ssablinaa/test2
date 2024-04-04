@@ -9,6 +9,7 @@ import { Page3Component } from './page3/page3.component';
 import { AppRoutingModule } from './app-routing.module';
 import { JsonService } from './core/services/json.service';
 import { ItalicDirective } from './core/directives/italic.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { ItalicDirective } from './core/directives/italic.directive';
     Page3Component,
     ItalicDirective,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [JsonService],
   bootstrap: [AppComponent],
 })

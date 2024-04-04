@@ -1,29 +1,28 @@
-[
-  {
-    "id": 1,
-    "category": "tops",
-    "name": "White Blouse",
-    "description": "A classic white blouse, perfect for any occasion.",
-    "price": 49.99,
-    "color": "white",
-    "size": ["S", "M", "L"]
-  },
-  {
-    "id": 2,
-    "category": "pants",
-    "name": "Black Jeans",
-    "description": "High-waisted black jeans with a comfortable fit.",
-    "price": 69.99,
-    "color": "black",
-    "size": ["S", "M", "L", "XL"]
-  },
-  {
-    "id": 3,
-    "category": "dresses",
-    "name": "Red Dress",
-    "description": "A stylish red dress, perfect for a night out.",
-    "price": 99.99,
-    "color": "red",
-    "size": ["S", "M"]
-  }
-]
+{
+  "clothes": [
+    {
+      "id": 1,
+      "category": "tops",
+      "name": "White Blouse",
+      "description": "A classic white blouse, perfect for any occasion.",
+      "price": 49.99,
+      "color": "white"
+    },
+    {
+      "id": 2,
+      "category": "pants",
+      "name": "Black Jeans",
+      "description": "High-waisted black jeans with a comfortable fit.",
+      "price": 69.99,
+      "color": "black"
+    },
+    {
+      "id": 3,
+      "category": "dresses",
+      "name": "Red Dress",
+      "description": "A stylish red dress, perfect for a night out.",
+      "price": 99.99,
+      "color": "red"
+    }
+  ]
+}

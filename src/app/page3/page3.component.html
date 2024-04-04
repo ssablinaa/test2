@@ -7,12 +7,6 @@
       <p>Category: {{ cloth.category }}</p>
       <p>Price: {{ cloth.price }}</p>
       <p>Color: {{ cloth.color }}</p>
-      <p>Sizes: {{ cloth.size.join(", ") }}</p>
     </li>
   </ul>
-</div>
-
-<div *ngIf="!clothes">
-  <h1>{{ title }}</h1>
-  <p>No clothes data available</p>
 </div>
