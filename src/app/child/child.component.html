@@ -1,5 +1,34 @@
-<h2>This is child</h2>
-<div>
-  <input type="text" [(ngModule)]="name" />
-</div>
-<ng-content></ng-content>
+<form [formGroup]="myForm" novalidate (ngSubmit)="onSubmit()">
+  <div>
+    <label>Имя</label><br />
+    <input name="name" formControlName="userName" />
+    <div
+      *ngIf="myForm.get('userName')?.invalid && myForm.get('userName')?.touched"
+    >
+      <div class="alert">Не указано имя</div>
+    </div>
+  </div>
+  <div>
+    <label>Email</label><br />
+    <input name="email" formControlName="userEmail" />
+    <div
+      *ngIf="
+        myForm.get('userEmail')?.invalid && myForm.get('userEmail')?.touched
+      "
+    >
+      <div class="alert">Некорректный email</div>
+    </div>
+  </div>
+  <div>
+    <label>Телефон</label><br />
+    <input name="phone" formControlName="userPhone" />
+    <div
+      *ngIf="
+        myForm.get('userPhone')?.invalid && myForm.get('userPhone')?.touched
+      "
+    >
+      <div class="alert">Некорректный номер телефона</div>
+    </div>
+  </div>
+  <button [disabled]="myForm.invalid">Отправить</button>
+</form>

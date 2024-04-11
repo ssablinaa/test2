@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { Page1Component } from './page1/page1.component';
 import { Page2Component } from './page2/page2.component';
 import { Page3Component } from './page3/page3.component';
+import { ChildComponent } from './child/child.component';
 import { confirmGuard } from './core/guards/confirm.guard';
 import { exitGuard } from './core/guards/exit.guard';
 
@@ -17,6 +18,7 @@ const routes: Routes = [
     canDeactivate: [exitGuard],
   },
   { path: 'page3', component: Page3Component },
+  { path: 'child', component: ChildComponent },
 ];
 
 @NgModule({

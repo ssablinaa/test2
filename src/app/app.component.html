@@ -1,7 +1,20 @@
-<h1>Основная страница</h1>
-<nav>
-  <a routerLink="/page1">Page1</a>
-  <a routerLink="/page2">Page2</a>
-  <a routerLink="/page3">Page3</a>
+<nav class="nav">
+  <div class="container">
+    <div class="nav_row">
+      <div class="logo">
+        <img src="./assets/image/logo.svg" alt="Logo" />
+        <span>Practice</span>
+      </div>
+      <div class="navigation">
+        <a routerLink="/page1">Page 1</a>
+        <a routerLink="/page2">Page 2</a>
+        <a routerLink="/page3">Page 3</a>
+        <a routerLink="/child">Child</a>
+      </div>
+    </div>
+  </div>
 </nav>
 <router-outlet></router-outlet>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+</style>
