@@ -12,6 +12,8 @@ import { ItalicDirective } from './core/directives/italic.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { ChildrenComponent } from './children/children.component';
+import { ParentsComponent } from './parents/parents.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { ChildComponent } from './child/child.component';
     ItalicDirective,
     ParentComponent,
     ChildComponent,
+    ChildrenComponent,
+    ParentsComponent,
   ],
   imports: [
     BrowserModule,

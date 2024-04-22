@@ -6,8 +6,11 @@ import { Page1Component } from './page1/page1.component';
 import { Page2Component } from './page2/page2.component';
 import { Page3Component } from './page3/page3.component';
 import { ChildComponent } from './child/child.component';
+import { ParentComponent } from './parent/parent.component';
 import { confirmGuard } from './core/guards/confirm.guard';
 import { exitGuard } from './core/guards/exit.guard';
+import { ParentsComponent } from './parents/parents.component';
+import { ChildrenComponent } from './children/children.component';
 
 const routes: Routes = [
   { path: 'page1/:id', component: Page1Component },
@@ -18,7 +21,8 @@ const routes: Routes = [
     canDeactivate: [exitGuard],
   },
   { path: 'page3', component: Page3Component },
-  { path: 'child', component: ChildComponent },
+  { path: 'parent', component: ParentComponent },
+  { path: 'parents', component: ParentsComponent },
 ];
 
 @NgModule({

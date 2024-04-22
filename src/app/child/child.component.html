@@ -1,34 +1,81 @@
-<form [formGroup]="myForm" novalidate (ngSubmit)="onSubmit()">
-  <div>
-    <label>Имя</label><br />
-    <input name="name" formControlName="userName" />
-    <div
-      *ngIf="myForm.get('userName')?.invalid && myForm.get('userName')?.touched"
-    >
-      <div class="alert">Не указано имя</div>
-    </div>
+<form [formGroup]="myReactiveForm" (ngSubmit)="onSubmit_myReactiveForm()">
+  <div class="div-input">
+    <label for="id_userName" #Username>Имя </label>
+    <input
+      id="id_userName"
+      name="userName"
+      formControlName="userName"
+      #userName_out
+    />
   </div>
-  <div>
-    <label>Email</label><br />
-    <input name="email" formControlName="userEmail" />
-    <div
-      *ngIf="
-        myForm.get('userEmail')?.invalid && myForm.get('userEmail')?.touched
-      "
-    >
-      <div class="alert">Некорректный email</div>
-    </div>
+  <div
+    class="text-danger div-danger"
+    *ngIf="
+      myReactiveForm.controls['userName'].invalid &&
+      myReactiveForm.controls['userName'].touched
+    "
+  >
+    Не указано имя!
   </div>
-  <div>
-    <label>Телефон</label><br />
-    <input name="phone" formControlName="userPhone" />
-    <div
-      *ngIf="
-        myForm.get('userPhone')?.invalid && myForm.get('userPhone')?.touched
-      "
-    >
-      <div class="alert">Некорректный номер телефона</div>
-    </div>
+  <div class="div-input">
+    <label for="id_userEmail" #Useremail>Email </label>
+    <input
+      id="id_userEmail"
+      name="userEmail"
+      formControlName="userEmail"
+      #userEmail_out
+    />
   </div>
-  <button [disabled]="myForm.invalid">Отправить</button>
+  <div
+    class="text-danger div-danger"
+    *ngIf="
+      myReactiveForm.controls['userEmail'].invalid &&
+      myReactiveForm.controls['userEmail'].touched
+    "
+  >
+    Не указан email!
+  </div>
+  <div class="div-input">
+    <label for="id_userPhone" #Username>Телефон</label>
+    <input
+      id="id_userPhone"
+      name="userPhone"
+      formControlName="userPhone"
+      #userPhone_out
+    />
+  </div>
+  <div
+    class="text-danger div-danger"
+    *ngIf="
+      myReactiveForm.controls['userPhone'].invalid &&
+      myReactiveForm.controls['userPhone'].touched
+    "
+  >
+    Не указан номер телефона!
+  </div>
+
+  <button
+    type="submit"
+    [disabled]="myReactiveForm.invalid"
+    (click)="
+      click(userName_out.value, userEmail_out.value, userPhone_out.value)
+    "
+  >
+    Сохранить
+  </button>
 </form>
+
+<div>
+  <h4>Данные пользователей</h4>
+  <ul>
+    <li *ngFor="let item of users">
+      <p>Имя пользователя: {{ item.userName }}</p>
+      <p>Почта пользователя: {{ item.userEmail }}</p>
+      <p>Номер пользователя: {{ item.userPhone }}</p>
+    </li>
+  </ul>
+</div>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+</style>

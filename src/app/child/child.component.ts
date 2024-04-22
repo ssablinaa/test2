@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {
   FormsModule,
+  FormBuilder,
   FormGroup,
   FormControl,
   Validators,
@@ -13,13 +14,34 @@ import {
   styleUrls: ['./child.component.scss'],
 })
 export class ChildComponent {
-  myForm: FormGroup = new FormGroup({
+  users: any[] = [];
+
+  @Output()
+  onClicked = new EventEmitter<string>();
+
+  myReactiveForm: FormGroup = new FormGroup({
     userName: new FormControl('', Validators.required),
-    userEmail: new FormControl('', [Validators.required, Validators.email]),
-    userPhone: new FormControl('', Validators.pattern('[0-9]{10}')),
+    userEmail: new FormControl('', Validators.required),
+    userPhone: new FormControl('', Validators.required),
   });
 
-  onSubmit() {
-    console.log(this.myForm.getRawValue()); //возвращает текущее значение всех контролов формы
+  constructor() {
+    this.onreInitForm();
+  }
+
+  click(value1: string, value2: string, value3: string) {
+    this.onClicked.emit('Вы ввели ' + value1 + value2 + value3);
+  }
+
+  onSubmit_myReactiveForm() {
+    this.users.push(this.myReactiveForm.getRawValue());
+  }
+
+  onreInitForm() {
+    this.myReactiveForm = new FormGroup({
+      userName: new FormControl('', Validators.required),
+      userEmail: new FormControl('', Validators.required),
+      userPhone: new FormControl('', Validators.required),
+    });
   }
 }

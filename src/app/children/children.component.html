@@ -1,0 +1,77 @@
+<div class="div-form">
+  <div class="div-input">
+    <label for="">Имя </label>
+    <input
+      type="text"
+      name="user_name"
+      [(ngModel)]="user_name"
+      (ngModelChange)="onNameChange()"
+      #Name_out="ngModel"
+      required
+    />
+  </div>
+  <div
+    [hidden]="Name_out.valid || Name_out.untouched"
+    class="div-danger text-danger"
+  >
+    Не указано имя
+  </div>
+  <div class="div-input">
+    <label for="">Email </label>
+    <input
+      type="text"
+      name="user_email"
+      [(ngModel)]="user_email"
+      (ngModelChange)="onNameChange()"
+      #Email_out="ngModel"
+      required
+    />
+  </div>
+  <div
+    [hidden]="Email_out.valid || Email_out.untouched"
+    class="div-danger text-danger"
+  >
+    Не указан email
+  </div>
+  <div class="div-input">
+    <label for="">Телефон </label>
+    <input
+      type="text"
+      name="user_phone"
+      [(ngModel)]="user_phone"
+      (ngModelChange)="onNameChange()"
+      #Phone_out="ngModel"
+      required
+    />
+  </div>
+  <div
+    [hidden]="Phone_out.valid || Phone_out.untouched"
+    class="div-danger text-danger"
+  >
+    Не указан номер телефона
+  </div>
+
+  <div>
+    <button
+      [disabled]="Name_out.invalid || Email_out.invalid || Phone_out.invalid"
+      (click)="addUser()"
+    >
+      Сохранить
+    </button>
+  </div>
+</div>
+
+<div>
+  <h4>Данные пользователей</h4>
+  <ul>
+    <li *ngFor="let p of user">
+      <p>Имя пользователя: {{ p.name }}</p>
+      <p>Почта пользователя: {{ p.email }}</p>
+      <p>Телефон пользователя: {{ p.phone }}</p>
+    </li>
+  </ul>
+</div>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+</style>
