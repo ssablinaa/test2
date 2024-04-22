@@ -25,20 +25,6 @@ export class ChildrenComponent {
   @Output()
   onClicked = new EventEmitter<string>();
 
-  myReactiveForm: FormGroup = new FormGroup({
-    user_name: new FormControl('', Validators.required),
-    user_email: new FormControl('', Validators.required),
-    user_phone: new FormControl('', Validators.required),
-  });
-
-  onreInitForm() {
-    this.myReactiveForm = new FormGroup({
-      user_name: new FormControl('', Validators.required),
-      user_email: new FormControl('', Validators.required),
-      user_phone: new FormControl('', Validators.required),
-    });
-  }
-
   addUser() {
     this.console_log();
     this.user.push(new User(this.user_name, this.user_email, this.user_phone));

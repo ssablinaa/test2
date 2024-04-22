@@ -15,7 +15,7 @@
       myReactiveForm.controls['userName'].touched
     "
   >
-    Не указано имя!
+    Неверно указано имя!
   </div>
   <div class="div-input">
     <label for="id_userEmail" #Useremail>Email </label>
@@ -33,7 +33,7 @@
       myReactiveForm.controls['userEmail'].touched
     "
   >
-    Не указан email!
+    Неверно указан email!
   </div>
   <div class="div-input">
     <label for="id_userPhone" #Username>Телефон</label>
@@ -51,7 +51,7 @@
       myReactiveForm.controls['userPhone'].touched
     "
   >
-    Не указан номер телефона!
+    Неверно указан номер телефона!
   </div>
 
   <button
@@ -65,7 +65,7 @@
   </button>
 </form>
 
-<div>
+<div class="base">
   <h4>Данные пользователей</h4>
   <ul>
     <li *ngFor="let item of users">

@@ -21,8 +21,8 @@ export class ChildComponent {
 
   myReactiveForm: FormGroup = new FormGroup({
     userName: new FormControl('', Validators.required),
-    userEmail: new FormControl('', Validators.required),
-    userPhone: new FormControl('', Validators.required),
+    userEmail: new FormControl('', [Validators.required, Validators.email]),
+    userPhone: new FormControl('', Validators.pattern('[0-9]{11}')),
   });
 
   constructor() {
@@ -40,8 +40,8 @@ export class ChildComponent {
   onreInitForm() {
     this.myReactiveForm = new FormGroup({
       userName: new FormControl('', Validators.required),
-      userEmail: new FormControl('', Validators.required),
-      userPhone: new FormControl('', Validators.required),
+      userEmail: new FormControl('', [Validators.required, Validators.email]),
+      userPhone: new FormControl('', Validators.pattern('[0-9]{11}')),
     });
   }
 }

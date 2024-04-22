@@ -14,7 +14,7 @@
     [hidden]="Name_out.valid || Name_out.untouched"
     class="div-danger text-danger"
   >
-    Не указано имя
+    Неверно указано имя
   </div>
   <div class="div-input">
     <label for="">Email </label>
@@ -24,6 +24,7 @@
       [(ngModel)]="user_email"
       (ngModelChange)="onNameChange()"
       #Email_out="ngModel"
+      pattern=".+@.+\..+"
       required
     />
   </div>
@@ -31,7 +32,7 @@
     [hidden]="Email_out.valid || Email_out.untouched"
     class="div-danger text-danger"
   >
-    Не указан email
+    Неверно указан email
   </div>
   <div class="div-input">
     <label for="">Телефон </label>
@@ -41,6 +42,7 @@
       [(ngModel)]="user_phone"
       (ngModelChange)="onNameChange()"
       #Phone_out="ngModel"
+      pattern="^\+7[1-9]{10}$"
       required
     />
   </div>
@@ -48,7 +50,7 @@
     [hidden]="Phone_out.valid || Phone_out.untouched"
     class="div-danger text-danger"
   >
-    Не указан номер телефона
+    Неверно указан номер телефона
   </div>
 
   <div>
@@ -61,7 +63,7 @@
   </div>
 </div>
 
-<div>
+<div class="users">
   <h4>Данные пользователей</h4>
   <ul>
     <li *ngFor="let p of user">
