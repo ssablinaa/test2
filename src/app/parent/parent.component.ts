@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Childrenn } from '../childrenn';
 
 @Component({
   selector: 'app-parent',

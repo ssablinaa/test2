@@ -11,4 +11,5 @@ export class Page2Component {
   save() {
     this.saved = true;
   }
+  exampleArray = ['Я', 'выучу', 'Angular'];
 }

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Childrenn } from '../childrenn';
+
 import { NgForm } from '@angular/forms';
 
 export class User {

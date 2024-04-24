@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { JsonService } from 'src/app/core/services/json.service';
-import { Cloth } from '../cloth';
+import { JsonService, Clothes } from 'src/app/core/services/json.service';
 
 @Component({
   selector: 'app-page3',
@@ -9,9 +8,10 @@ import { Cloth } from '../cloth';
 })
 export class Page3Component implements OnInit {
   title = 'page3';
-  clothes: Cloth[] = [];
+  clothes: Clothes[] = [];
 
   constructor(private jsonService: JsonService) {}
+
   ngOnInit() {
     this.jsonService.getClothes().subscribe((data: any) => {
       this.clothes = data['clothes'];
