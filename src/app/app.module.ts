@@ -16,6 +16,7 @@ import { ChildrenComponent } from './children/children.component';
 import { ParentsComponent } from './parents/parents.component';
 import { ReversePipe } from './core/pipes/reserve.pipe';
 import { ErrorInterceptor } from './core/interceptors/error.interceptors';
+import { TaskTrackerComponent } from './tasktracker/tasktracker.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ErrorInterceptor } from './core/interceptors/error.interceptors';
     ChildrenComponent,
     ParentsComponent,
     ReversePipe,
+    TaskTrackerComponent,
   ],
   imports: [
     BrowserModule,

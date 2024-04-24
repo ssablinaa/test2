@@ -1,0 +1,67 @@
+<div>
+  <h2>Task Tracker</h2>
+
+  <div>
+    <input [(ngModel)]="newTask.title" placeholder="Task title" required />
+    <select [(ngModel)]="newTask.type">
+      <option value="task">Task</option>
+      <option value="bug">Bug</option>
+    </select>
+    <select [(ngModel)]="newTask.priority" placeholder="Priority">
+      <option value="critical">Critical</option>
+      <option value="high">High</option>
+      <option value="medium">Medium</option>
+      <option value="low">Low</option>
+    </select>
+    <input [(ngModel)]="newTask.description" placeholder="Task description" />
+    <input [(ngModel)]="newTask.assignee" placeholder="Assignee" />
+    <select [(ngModel)]="newTask.status">
+      <option value="open">Open</option>
+      <option value="in-progress">In Progress</option>
+      <option value="completed">Completed</option>
+    </select>
+    <input [(ngModel)]="newTask.creator" placeholder="Your name" required />
+    <button (click)="addTask()">Add Task</button>
+  </div>
+
+  <ul>
+    <li *ngFor="let task of tasks">
+      {{ task.id }}
+      {{ task.title }} {{ task.type }} {{ task.priority ? task.priority : "" }}
+      {{ task.status }}
+      {{ task.description ? task.description : "" }}
+      {{ task.assignee ? task.assignee : "" }} (Created by {{ task.creator }} at
+      {{ task.createdAt }}{{ task.updatedAt }})
+
+      <button (click)="deleteTask(task.id)">Delete</button>
+      <button (click)="startEdit(task)">Edit</button>
+    </li>
+  </ul>
+
+  <div *ngIf="editingTask">
+    <input [(ngModel)]="editingTask.title" placeholder="Task title" required />
+    <input
+      [(ngModel)]="editingTask.description"
+      placeholder="Task description"
+    />
+    <input [(ngModel)]="editingTask.assignee" placeholder="Assignee" />
+    <select [(ngModel)]="editingTask.type">
+      <option value="task">Task</option>
+      <option value="bug">Bug</option>
+    </select>
+    <select [(ngModel)]="editingTask.priority">
+      <option value="critical">Critical</option>
+      <option value="high">High</option>
+      <option value="medium">Medium</option>
+      <option value="low">Low</option>
+    </select>
+    <select [(ngModel)]="editingTask.status">
+      <option value="open">Open</option>
+      <option value="in-progress">In Progress</option>
+      <option value="completed">Completed</option>
+    </select>
+
+    <button (click)="saveEdit()">Save</button>
+    <button (click)="cancelEdit()">Cancel</button>
+  </div>
+</div>

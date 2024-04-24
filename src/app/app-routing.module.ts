@@ -11,6 +11,7 @@ import { confirmGuard } from './core/guards/confirm.guard';
 import { exitGuard } from './core/guards/exit.guard';
 import { ParentsComponent } from './parents/parents.component';
 import { ChildrenComponent } from './children/children.component';
+import { TaskTrackerComponent } from './tasktracker/tasktracker.component';
 
 const routes: Routes = [
   { path: 'page1/:id', component: Page1Component },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'page3', component: Page3Component },
   { path: 'parent', component: ParentComponent },
   { path: 'parents', component: ParentsComponent },
+  { path: 'task', component: TaskTrackerComponent },
 ];
 
 @NgModule({
